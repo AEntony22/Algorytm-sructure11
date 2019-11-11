@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Algr01.h"
 
 #include <stdio.h>
@@ -253,16 +254,38 @@ void solution10()
 
 
 }
-
+int long fib(int n)
+{
+	if (n == 0) return 0;
+	if (n == 1) return 1;
+	return fib(n - 1) + fib(n - 2);
+}
 void solution11()
 {
 	printf("Solution 11\n");
 	// Решение
+	
+	
+		int i;
+		for (i = 0; i < 20; i++)
+			printf("%d ", fib(i));
+		
+
 }
+
+void TowerOfHanoi(int from, int to, int other, int n)
+{
+	if (n > 1) TowerOfHanoi(from, other, to, n - 1);
+	printf("%d %d\n", from, to);
+	if (n > 1) TowerOfHanoi(other, to, from, n - 1);
+}
+
+
 void solution12()
 {
 	printf("Solution 12\n");
 	// Решение
+	TowerOfHanoi(1, 2, 3, 4);
 }
 void solution13()
 {
